@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center md:mt-6">
+    <nav className="flex justify-between items-center md:mt-8">
       {/* Home page logo */}
       <h1 className="text-3xl font-semibold">
         <span className="text-blue-700">E</span>
