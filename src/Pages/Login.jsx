@@ -5,12 +5,15 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   // Handle login function
   // This function will be called when the user submits the login form
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true); 
+
     try {
       const res = await fetch('https://sugarytestapi.azurewebsites.net/AdminAccount/Login', {
         method: 'POST',
@@ -25,10 +28,13 @@ const Login = () => {
         navigate('/dashboard');
       } else {
         console.log('Login failed');
+        alert("Login failed. Please try again.");
       }
     } catch (err) {
       console.error('Error logging in:', err);
+      alert('Login failed. Please try again.');
     }
+    setLoading(false); 
   };
 
 
@@ -38,7 +44,7 @@ const Login = () => {
         <div>
           <div>
             <h1 className="text-3xl font-semibold">
-              <span className="text-blue-700">E</span>
+              <span className="text-orange-600">E</span>
               market
             </h1>
             <h2 className="my-3 mb-5 text-gray-600">
@@ -64,8 +70,8 @@ const Login = () => {
                   className="border-1 border-gray-300 rounded-md p-2 active:border-blue-700 focus:border-blue-700 focus:outline-none"
                   required
                 />
-                <button className="bg-blue-700 text-white rounded-md p-2 font-semibold hover:bg-blue-800 transition duration-300 ease-in-out cursor-pointer">
-                  Login
+                <button className="bg-orange-600 text-white rounded-md p-2 font-semibold hover:bg-orange-700 transition duration-300 ease-in-out cursor-pointer">
+                  {loading ? 'Loading...' : 'Login'}
                 </button>
               </form>
             </div>

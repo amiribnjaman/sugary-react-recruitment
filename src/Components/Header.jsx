@@ -15,7 +15,7 @@ const Header = () => {
     <nav className="flex justify-between items-center md:mt-8">
       {/* Home page logo */}
       <h1 className="text-3xl font-semibold">
-        <span className="text-blue-700">E</span>
+        <span className="text-orange-600">E</span>
         market
       </h1>
 
