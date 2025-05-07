@@ -1,14 +1,63 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../helper/logout";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { getToken } from "../helper/token";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [products, setproducts] = useState([]);
+  const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const loader = useRef(null);
 
   // Function to handle logout
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
+
+
+  // Function to fetch products from the API
+  const fetchProducts = useCallback(async () => {
+    setLoading(true);
+    const filter = btoa(JSON.stringify({ Skip: page * 20, Limit: 20, Types: [1] }));
+
+    const token = getToken();
+    // console.log(token)
+    const lastToken = token.split('.')
+
+    // Fetch products from the API
+    const res = await fetch(
+      `https://sugarytestapi.azurewebsites.net/Materials/GetAll/?filter=${filter}`,
+      {
+        headers: {
+          Authorization: `Bearer ${lastToken[0]}`,
+        },
+      }
+    );
+
+    if (res.status === 401) {
+      const newToken = await refreshAccessToken();
+      if (newToken) return fetchMaterials();
+      return navigate('/login');
+    }
+
+    if (!res.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
+
+    const data = await res.json();
+    console.log(data);
+    setproducts((prev) => [...prev, ...data.Materials]);
+    setLoading(false);
+  }, [page, navigate]);
+
+  // Function to handle infinite scroll
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
+
+
   return (
     <>
       {/* Dashboard Navbar */}
@@ -31,22 +80,27 @@ const Dashboard = () => {
       <div className="mt-10 ">
         <h3>Products</h3>
         <div className="mt-4 grid grid-cols-4 gap-x-4 gap-y-8">
-          {/* Single Product Card */}
-          <div className="border border-gray-300 rounded-md p-2 ">
-            <img
-              className="w-full bg-gray-100 inline-block h-[150px] rounded-md"
-              src=""
-              alt=""
-            />
-            <h1 className="text-lg text-center font-semibold">Card heading</h1>
-            <p className="text-center text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <p className="text-center my-2">Card price: 100 bdt</p>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer items-center justify-center flex mx-auto w-full">     
-              Purchase Now
-            </button> 
-          </div>
+          {products.map((product) => (
+            <div
+              key={product.Id}
+              className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2"
+            >
+              <img
+                src={
+                  "https://d1wh1xji6f82aw.cloudfront.net/" + product.CoverPhoto
+                }
+                alt={product.Title}
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">{product.Title}</h4>
+              <h5 className="text-sm">Brand: {product.BrandName}</h5>
+              <p className="text-gray-600">{product.Description}</p>
+              <p className="text-gray-800 font-bold">${product.SalesPrice}</p>
+              <button className="bg-blue-600 text-white rounded py-2 cursor-pointer mt-2 w-full">
+                Buy Now
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </>
