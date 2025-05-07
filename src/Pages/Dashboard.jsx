@@ -24,14 +24,14 @@ const Dashboard = () => {
 
     const token = getToken();
     // console.log(token)
-    const lastToken = token.split('.')
+    const finalToken = token.split('.')
 
     // Fetch products from the API
     const res = await fetch(
       `https://sugarytestapi.azurewebsites.net/Materials/GetAll/?filter=${filter}`,
       {
         headers: {
-          Authorization: `Bearer ${lastToken[0]}`,
+          Authorization: `Bearer ${finalToken[0]}`,
         },
       }
     );
@@ -101,6 +101,10 @@ const Dashboard = () => {
               </button>
             </div>
           ))}
+        </div>
+        <div>
+          {loading && <p className="text-center mt-8 font-semibold">Loading...</p>}
+          <div ref={loader} className="h-10" />
         </div>
       </div>
     </>
