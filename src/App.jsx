@@ -1,19 +1,27 @@
+import "./App.css";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import ProtectedRoute from "./Components/ProjectedRoute";
+import Dashboard from "./Pages/Dashboard";
 
-import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './Pages/Login';
-
-const App =()=> {
-
+const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
-export default App
+export default App;

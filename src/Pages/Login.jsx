@@ -6,10 +6,10 @@ const Login = () => {
           {/* Left side */}
           <div>
             <div>
-              <h1 className="text-3xl font-semibold">e-market</h1>
+              <h1 className="text-3xl font-semibold">emarket</h1>
               <h2 className="my-3">
-                Welcome to e-market, the ultimate platform for buying and
-                selling items. 
+                Welcome to emarket, the ultimate platform for buying and
+                selling goods. 
               </h2>
             </div>
             <div>
