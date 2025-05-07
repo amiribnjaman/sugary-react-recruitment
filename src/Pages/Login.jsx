@@ -34,11 +34,14 @@ const Login = () => {
 
     return (
       <div className=" w-1/4 mx-auto text-center flex items-center justify-center h-screen gap-4 flex-col">
-       {/* Login page title */}
+        {/* Login page title */}
         <div>
           <div>
-            <h1 className="text-3xl font-semibold">emarket</h1>
-            <h2 className="my-3">
+            <h1 className="text-3xl font-semibold">
+              <span className="text-blue-700">E</span>
+              market
+            </h1>
+            <h2 className="my-3 mb-5 text-gray-600">
               Welcome to emarket, the ultimate platform for buying and selling
               goods.
             </h2>
@@ -51,15 +54,17 @@ const Login = () => {
                   type="text"
                   placeholder="Username"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="border-2 border-gray-300 rounded-md p-2"
+                  className="border-1 border-gray-300 rounded-md p-2 active:border-blue-700 focus:border-blue-700 focus:outline-none"
+                  required
                 />
                 <input
                   type="password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border-2 border-gray-300 rounded-md p-2"
+                  className="border-1 border-gray-300 rounded-md p-2 active:border-blue-700 focus:border-blue-700 focus:outline-none"
+                  required
                 />
-                <button className="bg-blue-500 text-white rounded-md p-2">
+                <button className="bg-blue-700 text-white rounded-md p-2 font-semibold hover:bg-blue-800 transition duration-300 ease-in-out cursor-pointer">
                   Login
                 </button>
               </form>
