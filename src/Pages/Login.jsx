@@ -33,7 +33,7 @@ const Login = () => {
 
 
     return (
-      <div className=" w-1/4 mx-auto text-center flex items-center justify-center h-screen gap-4 flex-col">
+      <div className=" w-[40%] mx-auto text-center flex items-center justify-center h-screen gap-4 flex-col">
         {/* Login page title */}
         <div>
           <div>

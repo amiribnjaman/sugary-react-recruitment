@@ -1,6 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { getToken } from "../helper/token";
+import { logout } from "../helper/logout";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  // Function to handle logout
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <nav className="flex justify-between items-center md:mt-6">
       {/* Home page logo */}
@@ -19,7 +29,11 @@ const Home = () => {
             <NavLink to="/dashboard"> About</NavLink>
           </li>
           <li>
-            <NavLink to="/login"> Login</NavLink>
+            {getToken() ? (
+              <button onClick={handleLogout}>Logout</button>
+            ) : (
+              <NavLink to="/login">Login</NavLink>
+            )}
           </li>
         </ul>
       </div>
