@@ -96,7 +96,10 @@ const Dashboard = () => {
       <nav className="flex justify-between  mt-8 items-center">
         <h1 className="text-2xl font-semibold">
           Dashboard
-          <NavLink to="/" className="text-blue-500 text-sm ml-6">
+          <NavLink
+            to="/"
+            className="text-[#26A69A] hover:underline text-sm ml-6"
+          >
             /Home
           </NavLink>
         </h1>
@@ -149,7 +152,7 @@ const Dashboard = () => {
             </h4>
             <button
               onClick={() => setBuyCard(false)}
-              className="bg-blue-500 block px-6 py-2 text-white rounded mt-8 cursor-pointer"
+              className="bg-[#26A69A] block px-6 py-2 text-white rounded mt-8 cursor-pointer"
             >
               OK
             </button>
