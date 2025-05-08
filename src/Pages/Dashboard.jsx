@@ -9,23 +9,24 @@ const Dashboard = () => {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const loader = useRef(null);
-  const [buyCard, setBuyCard] = useState(false)
-
+  const [buyCard, setBuyCard] = useState(false);
   // Function to handle logout
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
 
-
   // Function to fetch products from the API
   const fetchProducts = useCallback(async () => {
     setLoading(true);
-    const filter = btoa(JSON.stringify({ Skip: page * 10, Limit: 10, Types: [1] }));
+    const filter = btoa(
+      JSON.stringify({ Skip: page * 10, Limit: 10, Types: [1] })
+    );
 
     const token = getToken();
     // console.log(token)
-    const finalToken = token.split('.')
+    if (!token) return;
+    const finalToken = token?.split(".");
 
     // Fetch products from the API
     const res = await fetch(
@@ -39,8 +40,8 @@ const Dashboard = () => {
 
     if (res.status === 401) {
       const newToken = await refreshAccessToken();
-      if (newToken) return fetchMaterials();
-      return navigate('/login');
+      if (newToken) return fetchProducts();
+      return navigate("/login");
     }
 
     if (!res.ok) {
@@ -49,15 +50,19 @@ const Dashboard = () => {
 
     const data = await res.json();
     console.log(data);
-    setproducts((prev) => [...prev, ...data.Materials]);
+    // Check if the response contains materials
+    if (data?.Materials.length > 0) {
+      // If the number of products is less than the limit, set hasMore to false
+      setproducts((prev) => [...prev, ...data.Materials]);
+    }
+    // Update the products state with the fetched data
     setLoading(false);
   }, [page, navigate]);
 
-  // Function to handle infinite scroll
+  // Initial load
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
-
+  }, []);
 
   // Trigger fetchProducts when the page state changes.
   // This effect triggers the fetchProducts function whenever the page state changes, nsuring new products are loaded as the user navigates through the page.
@@ -65,7 +70,7 @@ const Dashboard = () => {
     // Check if the user is at the bottom of the page
     const observer = new IntersectionObserver(
       (entries) => {
-        ``
+        ``;
         // If the loader element is intersecting, fetch more products
         if (entries[0].isIntersecting) {
           fetchProducts();
@@ -84,9 +89,6 @@ const Dashboard = () => {
       if (loader.current) observer.unobserve(loader.current);
     };
   }, [fetchProducts]);
-
-
-
 
   return (
     <>
@@ -136,10 +138,21 @@ const Dashboard = () => {
           ))}
           {/* Buy card */}
           <div
-            className={buyCard == true ? "fixed top-[30%] left-[40%] block bg-white shadow-xl p-3 rounded w-[350px] flex flex-col items-center justify-center h-[180px]" : "hidden"}
+            className={
+              buyCard == true
+                ? "fixed top-[30%] left-[40%] block bg-white shadow-xl p-3 rounded w-[350px] flex flex-col items-center justify-center h-[180px]"
+                : "hidden"
+            }
           >
-            <h4 className="text-xl font-semibold text-center">Thanks for your interest. We are working on it.</h4>
-            <button onClick={() => setBuyCard(false)} className="bg-blue-500 block px-6 py-2 text-white rounded mt-8 cursor-pointer">OK</button>
+            <h4 className="text-xl font-semibold text-center">
+              Thanks for your interest. We are working on it.
+            </h4>
+            <button
+              onClick={() => setBuyCard(false)}
+              className="bg-blue-500 block px-6 py-2 text-white rounded mt-8 cursor-pointer"
+            >
+              OK
+            </button>
           </div>
         </div>
         <div>
@@ -151,6 +164,6 @@ const Dashboard = () => {
       </div>
     </>
   );
-}
+};
 
-export default Dashboard
+export default Dashboard;
