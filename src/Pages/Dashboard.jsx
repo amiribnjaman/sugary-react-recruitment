@@ -20,7 +20,7 @@ const Dashboard = () => {
   // Function to fetch products from the API
   const fetchProducts = useCallback(async () => {
     setLoading(true);
-    const filter = btoa(JSON.stringify({ Skip: page * 20, Limit: 20, Types: [1] }));
+    const filter = btoa(JSON.stringify({ Skip: page * 10, Limit: 10, Types: [1] }));
 
     const token = getToken();
     // console.log(token)
@@ -58,12 +58,39 @@ const Dashboard = () => {
   }, [fetchProducts]);
 
 
+  // Trigger fetchProducts when the page state changes.
+  // This effect triggers the fetchProducts function whenever the page state changes, nsuring new products are loaded as the user navigates through the page.
+  useEffect(() => {
+    // Check if the user is at the bottom of the page
+    const observer = new IntersectionObserver(
+      (entries) => {
+        ``
+        // If the loader element is intersecting, fetch more products
+        if (entries[0].isIntersecting) {
+          fetchProducts();
+        }
+      },
+      { threshold: 1 }
+    );
+
+    // Observe the loader element
+    if (loader.current) {
+      observer.observe(loader.current);
+    }
+
+    // Cleanup function to unobserve the loader element
+    return () => {
+      if (loader.current) observer.unobserve(loader.current);
+    };
+  }, [fetchProducts]);
+
+
   return (
     <>
       {/* Dashboard Navbar */}
       <nav className="flex justify-between  mt-8 items-center">
         <h1 className="text-2xl font-semibold">
-          Dashboard{" "}
+          Dashboard
           <NavLink to="/" className="text-blue-500 text-sm ml-6">
             /Home
           </NavLink>
@@ -96,7 +123,7 @@ const Dashboard = () => {
               <h5 className="text-sm">Brand: {product.BrandName}</h5>
               <p className="text-gray-600">{product.Description}</p>
               <p className="text-gray-800 font-bold">${product.SalesPrice}</p>
-              <button className="bg-blue-600 text-white rounded py-2 cursor-pointer mt-2 w-full">
+              <button className="bg-orange-600 text-white rounded py-2 cursor-pointer mt-2 w-full">
                 Buy Now
               </button>
             </div>
