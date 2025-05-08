@@ -9,6 +9,7 @@ const Dashboard = () => {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const loader = useRef(null);
+  const [buyCard, setBuyCard] = useState(false)
 
   // Function to handle logout
   const handleLogout = () => {
@@ -85,6 +86,8 @@ const Dashboard = () => {
   }, [fetchProducts]);
 
 
+
+
   return (
     <>
       {/* Dashboard Navbar */}
@@ -123,14 +126,26 @@ const Dashboard = () => {
               <h5 className="text-sm">Brand: {product.BrandName}</h5>
               <p className="text-gray-600">{product.Description}</p>
               <p className="text-gray-800 font-bold">${product.SalesPrice}</p>
-              <button className="bg-orange-600 text-white rounded py-2 cursor-pointer mt-2 w-full">
+              <button
+                onClick={() => setBuyCard(true)}
+                className="bg-orange-600 text-white rounded py-2 cursor-pointer mt-2 w-full"
+              >
                 Buy Now
               </button>
             </div>
           ))}
+          {/* Buy card */}
+          <div
+            className={buyCard == true ? "fixed top-[30%] left-[40%] block bg-white shadow-xl p-3 rounded w-[350px] flex flex-col items-center justify-center h-[180px]" : "hidden"}
+          >
+            <h4 className="text-xl font-semibold text-center">Thanks for your interest. We are working on it.</h4>
+            <button onClick={() => setBuyCard(false)} className="bg-blue-500 block px-6 py-2 text-white rounded mt-8 cursor-pointer">OK</button>
+          </div>
         </div>
         <div>
-          {loading && <p className="text-center mt-8 font-semibold">Loading...</p>}
+          {loading && (
+            <p className="text-center mt-8 font-semibold">Loading...</p>
+          )}
           <div ref={loader} className="h-10" />
         </div>
       </div>
