@@ -91,7 +91,7 @@ const Dashboard = () => {
   }, [fetchProducts]);
 
   return (
-    <>
+    <div className="w-[75%] mx-auto">
       {/* Dashboard Navbar */}
       <nav className="flex justify-between  mt-8 items-center">
         <h1 className="text-2xl font-semibold">
@@ -162,7 +162,7 @@ const Dashboard = () => {
           <div ref={loader} className="h-10" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

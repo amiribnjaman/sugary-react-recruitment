@@ -12,27 +12,45 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center md:mt-8">
+    <nav className="w-[75%] mx-auto flex justify-between items-center md:mt-8">
       {/* Home page logo */}
-      <h1 className="text-3xl font-semibold">
-        <span className="text-orange-600">E</span>
-        market
-      </h1>
+      <div>
+        <h1 className="text-3xl font-semibold">
+          <span className="text-orange-500">E</span>
+          market
+        </h1>
+        <h5 className="text-[12px] font-thin text-[#000] font-normal">
+          Everything, Everytime
+        </h5>
+      </div>
 
       {/* Nav items */}
       <div>
         <ul className="flex gap-5 text-gray-800 items-center ">
           <li>
-            <NavLink to="/dashboard"> Dashoard</NavLink>
+            <NavLink to="/dashboard" className="hover:font-semibold">
+              {" "}
+              Dashoard
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard"> About</NavLink>
+            <NavLink to="/dashboard" className="hover:font-semibold">
+              {" "}
+              About
+            </NavLink>
           </li>
           <li>
             {getToken() ? (
-              <button className="cursor-pointer" onClick={handleLogout}>Logout</button>
+              <button
+                className="cursor-pointer hover:font-semibold"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
             ) : (
-              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/login" className="hover:font-semibold">
+                Login
+              </NavLink>
             )}
           </li>
         </ul>

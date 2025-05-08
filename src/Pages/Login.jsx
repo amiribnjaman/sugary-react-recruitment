@@ -38,8 +38,9 @@ const Login = () => {
   };
 
 
-    return (
-      <div className=" w-[40%] mx-auto text-center flex items-center justify-center h-screen gap-4 flex-col">
+  return (
+      <div className='w-[80%] mx-auto'>
+        <div className=" w-[40%] mx-auto text-center flex items-center justify-center h-screen gap-4 flex-col">
         {/* Login page title */}
         <div>
           <div>
@@ -58,7 +59,7 @@ const Login = () => {
               <form onSubmit={handleLogin} className="flex flex-col gap-4">
                 <input
                   type="text"
-                  placeholder="Username"
+                  placeholder="Eamil or Username"
                   onChange={(e) => setEmail(e.target.value)}
                   className="border-1 border-gray-300 rounded-md p-2 active:border-blue-700 focus:border-blue-700 focus:outline-none"
                   required
@@ -78,6 +79,8 @@ const Login = () => {
           </div>
         </div>
       </div>
+      </div>
+      
     );
 }
 
