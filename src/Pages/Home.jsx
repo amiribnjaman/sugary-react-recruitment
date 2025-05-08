@@ -3,6 +3,10 @@ import Header from "../Components/Header";
 import ProImg from '../assets/img.jpg'
 import ProImg2 from '../assets/img2.jpg'
 import ChooseImg from '../assets/ch1.jpg'
+import Person1 from '../assets/p1.jpg';
+import Person2 from '../assets/p2.jpg';
+import Person3 from "../assets/p3.jpg";
+import Person4 from '../assets/p4.jpg';
 
 const Home = () => {
 
@@ -51,18 +55,24 @@ const Home = () => {
       <div className="my-12 w-[75%] mx-auto">
         <div className="flex items-center  h-[80vh]">
           <div className="w-1/2 pr-10 flex items-center">
-            <img src={ChooseImg} className="w-full h-full mr-10 rounded-[30px] opacity-80" alt="" />
+            <img
+              src={ChooseImg}
+              className="w-full h-full mr-10 rounded-[30px] opacity-80"
+              alt=""
+            />
           </div>
           <div className="w-1/2 pr-10">
-            <h1 className="text-4xl font-semibold mt-10">
-              <span className="text-gray-800"> Why Choose Us?</span>
+            <h1 className="text-2xl font-semibold mt-10">
+              <span className="text-gray-800">
+                Why Choose <span className="text-orange-500">Us</span>?
+              </span>
             </h1>
             <p className="text-gray-600 mt-4">
               We are committed to providing you with the best online shopping
               experience. Our platform is user-friendly, secure, and offers a
               wide range of products at competitive prices.
             </p>
-            <ul className="list-disc pl-5 mt-4 text-gray-600">
+            <ul className="list-disc pl-5 mt-4 text-gray-600 text-sm">
               <li className="mb-2">
                 <strong className="text-gray-800">
                   Wide Range of Products:
@@ -92,15 +102,18 @@ const Home = () => {
       <div className="my-16 w-[75%] mx-auto">
         <div className="flex items-center">
           <div className="w-1/2 pr-10">
-            <h1 className="text-4xl font-semibold mt-10">
-              <span className="text-gray-800"> Happy Customer Feedback</span>
+            <h1 className="text-2xl font-semibold mt-10">
+              <span className="text-gray-800">
+                {" "}
+                Happy Customer <span className="text-orange-500">Feedback</span>
+              </span>
             </h1>
             <p className="text-gray-600 mt-4">
               We value our customers' feedback and strive to improve our
               services based on your suggestions. Your satisfaction is our top
               priority.
             </p>
-            <ul className=" pl-5 mt-4 text-gray-600">
+            <ul className=" pl-5 mt-7 text-gray-600">
               <li className="mb-2">
                 "I had a great shopping experience! The delivery was fast and
                 the product quality is excellent."
@@ -122,10 +135,30 @@ const Home = () => {
                 <strong className="text-gray-800 ml-2">Emily Johnson</strong>
               </li>
             </ul>
+            <button className="text-orange-500 underline font-semibold rounded py-2 cursor-pointer mt-4 px-4 py-2">
+              See More Feedback
+            </button>
           </div>
 
-          {/* Comments */}
-          <div></div>
+          {/* Happy customer Images */}
+          <div className="mt-10 flex w-1/2">
+            <img
+              src={Person1}
+              className="h-[350px] w-[150px] -ml-[20px] border border-2 border-white"
+            />
+            <img
+              src={Person2}
+              className="h-[350px] w-[150px] -ml-[20px] border border-2 border-white"
+            />
+            <img
+              src={Person3}
+              className="h-[350px] w-[150px] -ml-[20px] border border-2 border-white"
+            />
+            <img
+              src={Person4}
+              className="h-[350px] w-[150px] -ml-[20px] border border-2 border-white"
+            />
+          </div>
         </div>
       </div>
     </>
