@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="bg-[#fffff0] w-[90%] mx-auto py-8">
-      <div className="w-[85%] mx-auto flex gap-8">
+      <div className="w-[85%] mx-auto flex gap-8 justify-between">
         {/* Logo Section */}
         <div className="w-1/3">
           <h1 className="text-3xl font-semibold">
@@ -22,24 +22,24 @@ const Footer = () => {
 
         {/*  */}
         <div className="flex gap-8 mt-8">
-          <ul className="text-gray-800 font-semibold text-[14px]">
+          <ul className="text-gray-800 font-semibold text-[14px] gap-2 flex flex-col">
             <li className="cursor-pointer">All Products</li>
             <li className="cursor-pointer">Best Selling</li>
             <li className="cursor-pointer">Trending Now</li>
             <li className="cursor-pointer">Offers</li>
             <li className="cursor-pointer">Upcomming</li>
           </ul>
-          <ul className="text-gray-800 font-semibold text-[14px]">
+          <ul className="text-gray-800 font-semibold text-[14px] gap-2 flex flex-col">
             <li className="cursor-pointer">About Us</li>
             <li className="cursor-pointer">Contact Us</li>
             <li className="cursor-pointer">Career</li>
           </ul>
-          <ul className="text-gray-800 font-semibold text-[14px]">
+          <ul className="text-gray-800 font-semibold text-[14px] ">
             <li className="cursor-pointer">Privacy Policy</li>
             <li className="cursor-pointer">Terms & Conditions</li>
             <li className="cursor-pointer">Legals</li>
           </ul>
-          <ul className="text-gray-800 font-semibold text-[14px]">
+          <ul className="text-gray-800 font-semibold text-[14px] gap-1 flex flex-col">
             <li>Location 1: Gazipur, Dhaka</li>
             <li className="cursor-pointer">Email: dhakazone@emarket.com</li>
             <li className="cursor-pointer">Phones: 01839234, 081287183</li>
