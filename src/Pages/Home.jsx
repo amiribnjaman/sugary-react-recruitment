@@ -7,6 +7,7 @@ import Person1 from '../assets/p1.jpg';
 import Person2 from '../assets/p2.jpg';
 import Person3 from "../assets/p3.jpg";
 import Person4 from '../assets/p4.jpg';
+import Footer from "../Components/Footer";
 
 const Home = () => {
 
@@ -16,15 +17,15 @@ const Home = () => {
 
       {/* Banner section */}
       <div className="w-[90%] mx-auto">
-        <div className="bg-[#26A69A] mt-6 rounded-[15px] items-center h-[80vh]">
+        <div className="bg-[26A69A] bg-[#f2f2f2] mt-6 rounded-[15px] items-center h-[80vh]">
           <div className="w-[85%] mx-auto flex justify-between items-center">
             <div className="w-1/2 ">
               <h1 className="text-4xl font-semibold mt-10">
-                <span className="text-white"> Your Online Store</span>
+                <span className="text-gray-800"> Your Online Store</span>
                 <span className="text-orange-600"> for Everything</span>
-                <span className="text-white"> Everytime</span>
+                <span className="text-gray-800"> Everytime</span>
               </h1>
-              <p className="text-gray-200 mt-4">
+              <p className="text-gray-800 mt-4">
                 Your one-stop solution for all your e-commerce needs. Explore
                 our wide range of products and services tailored just for you.
                 Our platform is designed to provide you with a seamless shopping
@@ -57,7 +58,7 @@ const Home = () => {
           <div className="w-1/2 pr-10 flex items-center">
             <img
               src={ChooseImg}
-              className="w-full h-full mr-10 rounded-[30px] opacity-80"
+              className="w-full h-full mr-10 rounded-[15px] opacity-80"
               alt=""
             />
           </div>
@@ -144,7 +145,7 @@ const Home = () => {
           <div className="mt-10 flex w-1/2">
             <img
               src={Person1}
-              className="h-[350px] w-[150px] -ml-[20px] border border-2 border-white"
+              className="h-[350px] w-[150px] rounded-tl-[15px] rounded-bl-[15px] -ml-[20px] border border-2 border-white"
             />
             <img
               src={Person2}
@@ -156,11 +157,13 @@ const Home = () => {
             />
             <img
               src={Person4}
-              className="h-[350px] w-[150px] -ml-[20px] border border-2 border-white"
+              className="h-[350px] w-[150px] rounded-tr-[15px] rounded-br-[15px] -ml-[20px] border border-2 border-white"
             />
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
