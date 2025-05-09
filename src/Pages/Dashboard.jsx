@@ -98,7 +98,7 @@ const Dashboard = () => {
           Dashboard
           <NavLink
             to="/"
-            className="text-[#26A69A] hover:underline text-sm ml-6"
+            className="text-[#32cd32] hover:underline text-sm ml-6"
           >
             /Home
           </NavLink>
@@ -152,7 +152,7 @@ const Dashboard = () => {
             </h4>
             <button
               onClick={() => setBuyCard(false)}
-              className="bg-[#26A69A] block px-6 py-2 text-white rounded mt-8 cursor-pointer"
+              className="bg-[#32cd32] block px-6 py-2 text-white rounded mt-8 cursor-pointer"
             >
               OK
             </button>

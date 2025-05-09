@@ -8,8 +8,15 @@ import Person2 from '../assets/p2.jpg';
 import Person3 from "../assets/p3.jpg";
 import Person4 from '../assets/p4.jpg';
 import Footer from "../Components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  // 
+  const handleNavigateToDashboard = () => {
+    navigate('/dashboard')
+  }
 
   return (
     <>
@@ -17,12 +24,15 @@ const Home = () => {
 
       {/* Banner section */}
       <div className="w-[90%] mx-auto">
-        <div className="bg-[26A69A] bg-[#f2f2f2] mt-6 rounded-[15px] items-center h-[80vh]">
+        <div className="bg-[26A69A] bg-[f2f2f2] bg-[f0fff0] bg-[#fbfffb] mt-6 rounded-[15px] items-center h-[80vh]">
           <div className="w-[85%] mx-auto flex justify-between items-center">
             <div className="w-1/2 ">
               <h1 className="text-4xl font-semibold mt-10">
                 <span className="text-gray-800"> Your Online Store</span>
-                <span className="text-orange-600"> for Everything</span>
+                <span className="text-[#32cd32] -orange-600">
+                  {" "}
+                  for Everything
+                </span>
                 <span className="text-gray-800"> Everytime</span>
               </h1>
               <p className="text-gray-800 mt-4">
@@ -31,7 +41,7 @@ const Home = () => {
                 Our platform is designed to provide you with a seamless shopping
                 experience.
               </p>
-              <button className="bg-orange-600 text-white rounded py-2 cursor-pointer mt-4 px-4 py-2">
+              <button className="b-orange-600 bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-4 px-4 py-2">
                 Learn More
               </button>
             </div>
@@ -52,6 +62,191 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Sample Products */}
+      <div className="my-18 w-[75%] mx-auto">
+        <div className="flex justify-between items-center  mt-10">
+          <h1 className="text-2xl font-semibold">
+            <span className="text-gray-800">
+              Some of our
+              <span className="tex-orange-500 text-[#32cd32]">Products</span>
+            </span>
+          </h1>
+          <h4 className="cursor-pointer font-semibold text-sm underline text-[#32cd32]">
+            See All Products
+          </h4>
+        </div>
+
+        <div className="flex gap-8 justify-between mt-5">
+          {/* Products Sidebar */}
+          <div className="px-4 py-2 rounded shadow w-[25%] h-[300px]">
+            {/* <h5>Filter</h5>
+            <input type="text" placeholder="Search by name" /> */}
+            <ul className="flex flex-col gap-2">
+              <li className="border border-gray-100 p-2 text-md font-semibold bg-[#fbfffb] pl-2 cursor-pointer">
+                All Products
+              </li>
+              <li className="p-2 text-md pl-2 cursor-pointer">Best Selling</li>
+              <li className="p-2 text-md pl-2 cursor-pointer">Trending</li>
+              <li className="p-2 text-md pl-2 cursor-pointer">New Products</li>
+            </ul>
+          </div>
+
+          {/* Products area */}
+          <div className="grid grid-cols-3 w-[80%] gap-y-4 gap-x-4">
+            {/* Product card */}
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+              <img
+                src={ProImg}
+                alt=""
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">Blender</h4>
+              <h5 className="text-sm">Brand: Shakura</h5>
+              <p className="text-gray-600"></p>
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-gray-800 font-bold">$7498</p>
+                <button className="border border-gray-100 py-2 cursor-pointer mt-2 rounded bg-[#fbfffb] px-3 text-sm font-semibold">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => handleNavigateToDashboard()}
+                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            {/* Product card */}
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+              <img
+                src={ProImg2}
+                alt=""
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">Facewash</h4>
+              <h5 className="text-sm">Brand: Shakura</h5>
+              <p className="text-gray-600"></p>
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-gray-800 font-bold">$7498</p>
+                <button className="border border-gray-100 py-2 cursor-pointer mt-2 rounded bg-[#fbfffb] px-3 text-sm font-semibold">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => handleNavigateToDashboard()}
+                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            {/* Product card */}
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+              <img
+                src={ProImg}
+                alt=""
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">Blender</h4>
+              <h5 className="text-sm">Brand: Shakura</h5>
+              <p className="text-gray-600"></p>
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-gray-800 font-bold">$7498</p>
+                <button className="border border-gray-100 py-2 cursor-pointer mt-2 rounded bg-[#fbfffb] px-3 text-sm font-semibold">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => handleNavigateToDashboard()}
+                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            {/* Product card */}
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+              <img
+                src={ProImg2}
+                alt=""
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">Facewash</h4>
+              <h5 className="text-sm">Brand: Shakura</h5>
+              <p className="text-gray-600"></p>
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-gray-800 font-bold">$7498</p>
+                <button className="border border-gray-100 py-2 cursor-pointer mt-2 rounded bg-[#fbfffb] px-3 text-sm font-semibold">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => handleNavigateToDashboard()}
+                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            {/* Product card */}
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+              <img
+                src={ProImg}
+                alt=""
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">Facewash</h4>
+              <h5 className="text-sm">Brand: Shakura</h5>
+              <p className="text-gray-600"></p>
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-gray-800 font-bold">$7498</p>
+                <button className="border border-gray-100 py-2 cursor-pointer mt-2 rounded bg-[#fbfffb] px-3 text-sm font-semibold">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => handleNavigateToDashboard()}
+                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            {/* Product card */}
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+              <img
+                src={ProImg2}
+                alt=""
+                className="w-full h-32 object-cover rounded-md"
+              />
+              <h4 className="text-lg font-semibold">Facewash</h4>
+              <h5 className="text-sm">Brand: Shakura</h5>
+              <p className="text-gray-600"></p>
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-gray-800 font-bold">$7498</p>
+                <button className="border border-gray-100 py-2 cursor-pointer mt-2 rounded bg-[#fbfffb] px-3 text-sm font-semibold">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="">
+                <button
+                  onClick={() => handleNavigateToDashboard()}
+                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why choose us Section */}
       <div className="my-12 w-[75%] mx-auto">
         <div className="flex items-center  h-[80vh]">
@@ -65,7 +260,8 @@ const Home = () => {
           <div className="w-1/2 pr-10">
             <h1 className="text-2xl font-semibold mt-10">
               <span className="text-gray-800">
-                Why Choose <span className="text-orange-500">Us</span>?
+                Why do Business with 
+                <span className="tex-orange-500 text-[#32cd32]"> Us</span>?
               </span>
             </h1>
             <p className="text-gray-600 mt-4">
@@ -106,7 +302,8 @@ const Home = () => {
             <h1 className="text-2xl font-semibold mt-10">
               <span className="text-gray-800">
                 {" "}
-                Happy Customer <span className="text-orange-500">Feedback</span>
+                Happy Customer{" "}
+                <span className="tex-orange-500 text-[#32cd32]">Feedback</span>
               </span>
             </h1>
             <p className="text-gray-600 mt-4">
@@ -136,7 +333,7 @@ const Home = () => {
                 <strong className="text-gray-800 ml-2">Emily Johnson</strong>
               </li>
             </ul>
-            <button className="text-orange-500 underline font-semibold rounded py-2 cursor-pointer mt-4 px-4 py-2">
+            <button className="tex-orange-500 text-[#32cd32] underline font-semibold rounded py-2 cursor-pointer mt-4 px-4 py-2">
               See More Feedback
             </button>
           </div>

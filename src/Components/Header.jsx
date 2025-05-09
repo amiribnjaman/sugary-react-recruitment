@@ -15,9 +15,9 @@ const Header = () => {
     <nav className="w-[75%] mx-auto flex justify-between items-center md:mt-8">
       {/* Home page logo */}
       <div>
-        <h1 className="text-3xl font-semibold">
-          <span className="text-orange-500">E</span>
-          market
+        <h1 className="text-3xl font-semibold ">
+          <span className="text-[#32cd32]">emar</span>
+          <span className="">ket</span>
         </h1>
         <h5 className="text-[12px] font-thin text-[#000] font-normal">
           Everything, Everytime
