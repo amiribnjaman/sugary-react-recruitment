@@ -41,7 +41,7 @@ const Home = () => {
                 Our platform is designed to provide you with a seamless shopping
                 experience.
               </p>
-              <button className="b-orange-600 bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-4 px-4 py-2">
+              <button className="b-orange-600 bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-4 px-4 py-2">
                 Learn More
               </button>
             </div>
@@ -68,12 +68,15 @@ const Home = () => {
           <h1 className="text-2xl font-semibold">
             <span className="text-gray-800">
               Some of our
-              <span className="tex-orange-500 text-[#32cd32]">Products</span>
+              <span className="tex-orange-500 text-[#32cd32]"> Products</span>
             </span>
           </h1>
-          <h4 className="cursor-pointer font-semibold text-sm underline text-[#32cd32]">
+          <button
+            className="cursor-pointer font-semibold text-sm underline text-[#359f35] hover:text-[#32cd32]"
+            onClick={() => handleNavigateToDashboard()}
+          >
             See All Products
-          </h4>
+          </button>
         </div>
 
         <div className="flex gap-8 justify-between mt-5">
@@ -82,12 +85,18 @@ const Home = () => {
             {/* <h5>Filter</h5>
             <input type="text" placeholder="Search by name" /> */}
             <ul className="flex flex-col gap-2">
-              <li className="border border-gray-100 p-2 text-md font-semibold bg-[#fbfffb] pl-2 cursor-pointer">
+              <li className="border border-gray-100 p-2 text-md font-semibold bg-[#fbfffb] pl-2 cursor-pointer rounded">
                 All Products
               </li>
-              <li className="p-2 text-md pl-2 cursor-pointer">Best Selling</li>
-              <li className="p-2 text-md pl-2 cursor-pointer">Trending</li>
-              <li className="p-2 text-md pl-2 cursor-pointer">New Products</li>
+              <li className="p-2 text-md pl-2 cursor-pointer border border-white hover:border-gray-100 rounded">
+                Best Selling
+              </li>
+              <li className="p-2 text-md pl-2 cursor-pointer border border-white hover:border-gray-100 rounded">
+                Trending
+              </li>
+              <li className="p-2 text-md pl-2 cursor-pointer border border-white hover:border-gray-100 rounded">
+                New Products
+              </li>
             </ul>
           </div>
 
@@ -112,7 +121,7 @@ const Home = () => {
               <div className="">
                 <button
                   onClick={() => handleNavigateToDashboard()}
-                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                  className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
                 >
                   Buy Now
                 </button>
@@ -137,7 +146,7 @@ const Home = () => {
               <div className="">
                 <button
                   onClick={() => handleNavigateToDashboard()}
-                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                  className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
                 >
                   Buy Now
                 </button>
@@ -162,7 +171,7 @@ const Home = () => {
               <div className="">
                 <button
                   onClick={() => handleNavigateToDashboard()}
-                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                  className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
                 >
                   Buy Now
                 </button>
@@ -187,7 +196,7 @@ const Home = () => {
               <div className="">
                 <button
                   onClick={() => handleNavigateToDashboard()}
-                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                  className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
                 >
                   Buy Now
                 </button>
@@ -212,7 +221,7 @@ const Home = () => {
               <div className="">
                 <button
                   onClick={() => handleNavigateToDashboard()}
-                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                  className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
                 >
                   Buy Now
                 </button>
@@ -237,7 +246,7 @@ const Home = () => {
               <div className="">
                 <button
                   onClick={() => handleNavigateToDashboard()}
-                  className="bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
+                  className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
                 >
                   Buy Now
                 </button>
@@ -260,7 +269,7 @@ const Home = () => {
           <div className="w-1/2 pr-10">
             <h1 className="text-2xl font-semibold mt-10">
               <span className="text-gray-800">
-                Why do Business with 
+                Why do Business with
                 <span className="tex-orange-500 text-[#32cd32]"> Us</span>?
               </span>
             </h1>
@@ -333,7 +342,7 @@ const Home = () => {
                 <strong className="text-gray-800 ml-2">Emily Johnson</strong>
               </li>
             </ul>
-            <button className="tex-orange-500 text-[#32cd32] underline font-semibold rounded py-2 cursor-pointer mt-4 px-4 py-2">
+            <button className="tex-orange-500 text-[#359f35] hover:text-[#32cd32] underline font-semibold rounded py-2 cursor-pointer mt-4 px-4 py-2">
               See More Feedback
             </button>
           </div>

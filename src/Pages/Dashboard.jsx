@@ -133,7 +133,7 @@ const Dashboard = () => {
               <p className="text-gray-800 font-bold">${product.SalesPrice}</p>
               <button
                 onClick={() => setBuyCard(true)}
-                className="bg-orange-600 text-white rounded py-2 cursor-pointer mt-2 w-full"
+                className="bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-2 w-full"
               >
                 Buy Now
               </button>

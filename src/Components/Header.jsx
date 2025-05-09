@@ -26,15 +26,21 @@ const Header = () => {
 
       {/* Nav items */}
       <div>
-        <ul className="flex gap-5 text-gray-800 items-center ">
+        <ul className="flex gap-5 text-gray-800 items-center font-sembold">
           <li>
-            <NavLink to="/dashboard" className="hover:font-semibold">
+            <NavLink
+              to="/dashboard"
+              className="hover:text-[#32cd32] font-semibold"
+            >
               {" "}
               Dashoard
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard" className="hover:font-semibold">
+            <NavLink
+              to="/dashboard"
+              className="hover:text-[#32cd32] font-semibold"
+            >
               {" "}
               About
             </NavLink>
@@ -42,13 +48,16 @@ const Header = () => {
           <li>
             {getToken() ? (
               <button
-                className="cursor-pointer hover:font-semibold"
+                className="cursor-pointer hover:text-[#32cd32] font-semibold"
                 onClick={handleLogout}
               >
                 Logout
               </button>
             ) : (
-              <NavLink to="/login" className="hover:font-semibold">
+              <NavLink
+                to="/login"
+                className="hover:text-[#32cd32] font-semibold"
+              >
                 Login
               </NavLink>
             )}
