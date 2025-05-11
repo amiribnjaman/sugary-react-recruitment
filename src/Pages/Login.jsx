@@ -39,16 +39,16 @@ const Login = () => {
 
 
   return (
-    <div className="w-[80%] mx-auto">
-      <div className=" w-[40%] mx-auto text-center flex items-center justify-center h-screen gap-4 flex-col">
+    <div className="md:w-[80%] mx-auto">
+      <div className="w-[80%] md:w-[40%] mx-auto text-center flex items-center justify-center h-[70vh] md:h-screen gap-4 flex-col">
         {/* Login page title */}
         <div>
           <div>
-            <h1 className="text-3xl font-semibold ">
+            <h1 className="text-2xl md:text-3xl font-semibold ">
               <span className="text-[#32cd32]">emar</span>
               <span className="">ket</span>
             </h1>
-            <h2 className="my-3 mb-5 text-gray-600">
+            <h2 className="my-3 mb-5 text-gray-600 text-sm md:text-normal">
               Welcome to emarket, the ultimate platform for buying and selling
               goods.
             </h2>

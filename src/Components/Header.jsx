@@ -12,10 +12,10 @@ const Header = () => {
   };
 
   return (
-    <nav className="w-[75%] mx-auto flex justify-between items-center md:mt-8">
+    <nav className="w-[90%] md:w-[75%] mx-auto flex justify-between items-center mt-4 md:mt-8">
       {/* Home page logo */}
       <div>
-        <h1 className="text-3xl font-semibold ">
+        <h1 className="text-2xl md:text-3xl font-semibold ">
           <span className="text-[#32cd32]">emar</span>
           <span className="">ket</span>
         </h1>
@@ -26,7 +26,7 @@ const Header = () => {
 
       {/* Nav items */}
       <div>
-        <ul className="flex gap-5 text-gray-800 items-center font-sembold">
+        <ul className="flex gap-5 text-gray-800 items-center font-sembold text-[14px] md:text-[16px]">
           <li>
             <NavLink
               to="/dashboard"

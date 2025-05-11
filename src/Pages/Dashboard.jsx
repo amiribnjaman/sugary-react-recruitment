@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const loader = useRef(null);
   const [buyCard, setBuyCard] = useState(false);
+
   // Function to handle logout
   const handleLogout = () => {
     logout();
@@ -50,6 +51,7 @@ const Dashboard = () => {
 
     const data = await res.json();
     console.log(data);
+
     // Check if the response contains materials
     if (data?.Materials.length > 0) {
       // If the number of products is less than the limit, set hasMore to false
@@ -63,6 +65,8 @@ const Dashboard = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  
 
   // Trigger fetchProducts when the page state changes.
   // This effect triggers the fetchProducts function whenever the page state changes, nsuring new products are loaded as the user navigates through the page.
@@ -91,7 +95,7 @@ const Dashboard = () => {
   }, [fetchProducts]);
 
   return (
-    <div className="w-[75%] mx-auto">
+    <div className="w-[90%] md:w-[75%] mx-auto">
       {/* Dashboard Navbar */}
       <nav className="flex justify-between  mt-8 items-center">
         <h1 className="text-2xl font-semibold">
@@ -105,7 +109,7 @@ const Dashboard = () => {
         </h1>
 
         <div>
-          <button className="cursor-pointer" onClick={handleLogout}>
+          <button className="cursor-pointer " onClick={handleLogout}>
             Logout
           </button>
         </div>
@@ -114,7 +118,7 @@ const Dashboard = () => {
       {/* Dashbaord Body */}
       <div className="mt-10 ">
         <h3>Products</h3>
-        <div className="mt-4 grid grid-cols-4 gap-x-4 gap-y-8">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-8">
           {products.map((product) => (
             <div
               key={product.Id}
