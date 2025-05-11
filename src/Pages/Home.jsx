@@ -24,8 +24,8 @@ const Home = () => {
 
       {/* Banner section */}
       <div className="md:w-[90%] w-[95%] mx-auto">
-        <div className="bg-[26A69A] bg-[f2f2f2] bg-[f0fff0] bg-[#fbfffb] mt-6 rounded-[15px] items-center h-[40vh] md:h-[80vh]">
-          <div className="w-[90%] md:w-[85%] mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div className="bg-[26A69A] bg-[f2f2f2] bg-[f0fff0] bg-[#fbfffb] mt-6 rounded-[15px] flex items-center h-[60vh] md:h-[80vh]">
+          <div className="w-[90%] md:w-[85%] mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center">
             <div className="md:w-1/2 ">
               <h1 className="text-2xl md:text-4xl font-semibold mt-10 text-center md:text-left">
                 <span className="text-gray-800"> Your Online Store</span>
@@ -38,7 +38,7 @@ const Home = () => {
               <p className="text-gray-800 mt-4 text-center md:text-left text-[14px] md:text-normal">
                 Your one-stop solution for all your e-commerce needs. Explore
                 our wide range of products and services tailored just for you.
-                <span className="hiddend md:block">
+                <span className="hidden md:block">
                   Our platform is designed to provide you with a seamless
                   shopping experience.
                 </span>
@@ -47,10 +47,10 @@ const Home = () => {
                 Learn More
               </button>
             </div>
-            <div className=" flex items-center justify-center pt-11">
+            <div className="items-center justify-center pt-11 md:flex hidden">
               <img
                 src={ProImg}
-                className="w-[220px] h-[380px] rounded-tr-[80px] rounded-tl-[80px] -mr-[50px] z-10 pt-6 md:block hidden"
+                className="w-[220px] h-[380px] rounded-tr-[80px] rounded-tl-[80px] -mr-[50px] z-10 pt-6 "
                 alt=""
               />
               <img
@@ -261,7 +261,7 @@ const Home = () => {
       {/* Why choose us Section */}
       <div className="md:my-16 my-20 w-[90%] md:w-[75%] mx-auto">
         <div className="flex flex-col flex-col-reverse md:flex-row items-center h-[80vh]">
-          <div className="md:w-1/2 md:pr-10 md:flex items-center">
+          <div className="md:w-1/2 md:pr-10 md:flex items-center mt-6 md:mt-0">
             <img
               src={ChooseImg}
               className="w-full h-full mr-10 rounded-[15px] opacity-80"
@@ -269,7 +269,7 @@ const Home = () => {
             />
           </div>
           <div className="md:w-1/2 md:pr-10">
-            <h1 className="text-xl md:text-2xl font-semibold mt-10">
+            <h1 className="text-xl md:text-2xl font-semibold md:mt-10">
               <span className="text-gray-800">
                 Why do Business with
                 <span className="tex-orange-500 text-[#32cd32]"> Us</span>?
