@@ -24,7 +24,7 @@ const Home = () => {
 
       {/* Banner section */}
       <div className="md:w-[90%] w-[95%] mx-auto">
-        <div className="bg-[26A69A] bg-[f2f2f2] bg-[f0fff0] bg-[#fbfffb] mt-6 rounded-[15px] flex items-center h-[60vh] md:h-[80vh]">
+        <div className="bg-[26A69A] bg-[f2f2f2] bg-[f0fff0] bg-[#fbfffb] mt-6 rounded-[15px] flex md:block items-center h-[60vh] md:h-[80vh]">
           <div className="w-[90%] md:w-[85%] mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center">
             <div className="md:w-1/2 ">
               <h1 className="text-2xl md:text-4xl font-semibold mt-10 text-center md:text-left">
