@@ -38,8 +38,10 @@ const Home = () => {
               <p className="text-gray-800 mt-4 text-center md:text-left text-[14px] md:text-normal">
                 Your one-stop solution for all your e-commerce needs. Explore
                 our wide range of products and services tailored just for you.
-                Our platform is designed to provide you with a seamless shopping
-                experience.
+                <span className="hiddend md:block">
+                  Our platform is designed to provide you with a seamless
+                  shopping experience.
+                </span>
               </p>
               <button className="b-orange-600 bg-[#359f35] hover:bg-[#32cd32] text-white rounded py-2 cursor-pointer mt-4 px-4 py-2 text-center md:text-left block mx-auto md:mx-0">
                 Learn More
@@ -75,7 +77,7 @@ const Home = () => {
             className="cursor-pointer font-semibold text-sm underline text-[#359f35] hover:text-[#32cd32] text-sm md:text-[16px]"
             onClick={() => handleNavigateToDashboard()}
           >
-            See All Products
+            All Products
           </button>
         </div>
 
@@ -257,9 +259,9 @@ const Home = () => {
       </div>
 
       {/* Why choose us Section */}
-      <div className="my-12 w-[90%] md:w-[75%] mx-auto">
+      <div className="md:my-16 my-20 w-[90%] md:w-[75%] mx-auto">
         <div className="flex flex-col flex-col-reverse md:flex-row items-center h-[80vh]">
-          <div className="md:w-1/2 md:pr-10 md:flex items-center mt-6 md:mt-0">
+          <div className="md:w-1/2 md:pr-10 md:flex items-center">
             <img
               src={ChooseImg}
               className="w-full h-full mr-10 rounded-[15px] opacity-80"
@@ -350,7 +352,7 @@ const Home = () => {
           <div className="mt-10 flex md:w-1/2">
             <img
               src={Person1}
-              className="h-[350px] w-1/2 md:w-[150px] rounded-tl-[15px] rounded-bl-[15px] md:-ml-[20px] border border-2 border-white"
+              className="h-[300px] md:h-[350px] w-1/2 md:w-[150px] rounded-tl-[15px] rounded-bl-[15px] md:-ml-[20px] border border-2 border-white"
             />
             <img
               src={Person2}
@@ -362,7 +364,7 @@ const Home = () => {
             />
             <img
               src={Person4}
-              className="h-[350px] w-1/2 md:w-[150px] rounded-tr-[15px] rounded-br-[15px] md:-ml-[20px] border border-2 border-white"
+              className="h-[300px] md:h-[350px] w-1/2 md:w-[150px] rounded-tr-[15px] rounded-br-[15px] md:-ml-[20px] border border-2 border-white"
             />
           </div>
         </div>

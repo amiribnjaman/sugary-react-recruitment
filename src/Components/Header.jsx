@@ -19,7 +19,7 @@ const Header = () => {
           <span className="text-[#32cd32]">emar</span>
           <span className="">ket</span>
         </h1>
-        <h5 className="text-[12px] font-thin text-[#000] font-normal">
+        <h5 className="text-[12px] font-thin text-[#000] font-normal hidden md:block">
           Everything, Everytime
         </h5>
       </div>
@@ -39,7 +39,7 @@ const Header = () => {
           <li>
             <NavLink
               to="/dashboard"
-              className="hover:text-[#32cd32] font-semibold"
+              className="hover:text-[#32cd32] font-semibold hidden md:block"
             >
               {" "}
               About
